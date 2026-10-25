@@ -55,7 +55,6 @@ private:
     std::string csvName_;
 };
 
-// Модель 1.10: y(t+1) = a1*y(t) + b1*u(t) + b2*u(t-2)
 class Model1_10 final : public Model {
 public:
     Model1_10(double a1, double b1, double b2)
@@ -78,7 +77,6 @@ private:
     double uPrev2_ = 0.0;
 };
 
-// Модель 2.2: y(t+1) = a*y(t) + b*sat(u(t)), sat ограничивает u в [uMin, uMax]
 class Model2_2 final : public Model {
 public:
     Model2_2(double a, double b, double uMin, double uMax)
@@ -97,8 +95,6 @@ private:
     double y_ = 0.0;
 };
 
-// Модель 3.4: dy/dt = -a*y^2, метод Эйлера: y(t+1) = y(t) - dt*a*y(t)^2
-// Вход u в уравнение не входит.
 class Model3_4 final : public Model {
 public:
     Model3_4(double a, double deltaT, double y0)
