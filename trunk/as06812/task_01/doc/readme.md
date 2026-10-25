@@ -426,6 +426,6 @@ classDiagram
 | Ветка | `as06812/task_01` |
 | Исходный код | `trunk/as06812/task_01/src` |
 | Отчёт, графики и таблицы | `trunk/as06812/task_01/doc` |
-| Pull request | <ссылка на PR> |
+| Pull request | `https://github.com/brstu/TMAU-2026/pull/44` |
 
 В каталог `src` помещены файлы `RealizeModel.cpp`, `models.h`, `Graph.py`, `CMakeLists.txt` и `build.bat`. В каталог `doc` помещены `readme.md`, девять графиков `Model_<модель>_<сигнал>.png` и девять таблиц результатов `Model_<модель>_<сигнал>.csv`.
