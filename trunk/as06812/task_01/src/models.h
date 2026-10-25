@@ -104,7 +104,7 @@ public:
     Model3_4(double a, double deltaT, double y0)
         : Model("Модель 3.4", "Model 3.4"), a_(a), deltaT_(deltaT), y_(y0) {}
 
-    double nextValue(double /*u*/) override {
+    double nextValue(double) override {
         y_ -= deltaT_ * a_ * y_ * y_;
         return y_;
     }

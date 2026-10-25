@@ -30,11 +30,12 @@ bool readNumber(const std::string& prompt, double& value) {
         char* end = nullptr;
         const double parsed = std::strtod(line.c_str(), &end);
         const bool hasNumber = end != line.c_str();
-        const bool onlySpacesLeft = std::string(end).find_first_not_of(" \t\r") == std::string::npos;
-        if (hasNumber && onlySpacesLeft && std::isfinite(parsed)) {
-            value = parsed;
-            return true;
-        }
+        if (const bool onlySpacesLeft = 
+                std::string(end).find_first_not_of(" \t\r") == std::string::npos;
+            hasNumber && onlySpacesLeft && std::isfinite(parsed)) {
+                value = parsed;
+                return true;
+            }
         std::cout << "Ошибка: нужно ввести число.\n";
     }
     return false;
@@ -43,11 +44,11 @@ bool readNumber(const std::string& prompt, double& value) {
 bool readInt(const std::string& prompt, int low, int high, int& result) {
     double value = 0.0;
     while (readNumber(prompt, value)) {
-        const bool isWhole = std::abs(value - std::round(value)) < 1e-9;
-        if (isWhole && value >= low && value <= high) {
-            result = static_cast<int>(std::lround(value));
-            return true;
-        }
+        if (const bool isWhole = std::abs(value - std::round(value)) < 1e-9;
+            isWhole && value >= low && value <= high) {
+                result = static_cast<int>(std::lround(value));
+                return true;
+            }
         std::cout << "Ошибка: нужно целое число от " << low << " до " << high << ".\n";
     }
     return false;
